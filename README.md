@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -46,5 +47,28 @@
 
         <button type="submit">Enviar</button>
     </form>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const url = "https://script.google.com/macros/s/AKfycbyREaVkidCyyFiZ8TEgdEp_8yuY3XaO86bqCn_YSGrDWmIN-EizujGmTd5BfcL52zXX/exec";
+
+            fetch(url, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert("Cadastro enviado com sucesso!");
+                e.target.reset();
+            })
+            .catch(error => {
+                console.error("Erro ao enviar:", error);
+                alert("Erro ao enviar os dados.");
+            });
+        });
+    </script>
 </body>
 </html>
