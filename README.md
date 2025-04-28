@@ -53,7 +53,7 @@
             e.preventDefault();
 
             const formData = new FormData(e.target);
-            const url = "https://script.google.com/macros/s/AKfycbyREaVkidCyyFiZ8TEgdEp_8yuY3XaO86bqCn_YSGrDWmIN-EizujGmTd5BfcL52zXX/exec";
+            const url = "https://script.google.com/macros/s/AKfycby8JDGTDAy8CzbnDqQL7qVPJoSMagVjBrzKXQI_ICOw3coEoB-8oz1E2Uoc2Yj1NGqP/exec";
 
             fetch(url, {
                 method: "POST",
